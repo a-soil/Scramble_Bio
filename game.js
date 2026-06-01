@@ -22,6 +22,9 @@ Promise.all([
         .filter(x => x.length > 0)
     );
 
+console.log("Target word:", targetWord);
+console.log("Definition:", bioDict[targetWord]);
+    
     startGame();
 });
 
@@ -30,8 +33,7 @@ function startGame() {
     let words = Object.keys(bioDict);
 
     targetWord =
-        words[Math.floor(Math.random() * words.length)]
-        .toLowerCase();
+        words[Math.floor(Math.random() * words.length)];
 
     let letters =
         targetWord.replaceAll(" ", "").split("");
@@ -42,7 +44,9 @@ function startGame() {
         .innerText = letters.join(" ");
 
     targetCount =
-        countLetters(targetWord.replaceAll(" ", ""));
+           countLetters(
+        targetWord.toLowerCase().replaceAll(" ", "")
+    );
 
     startTimer();
 }
