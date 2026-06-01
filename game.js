@@ -168,3 +168,11 @@ function endGame() {
     document.getElementById("results")
         .innerHTML = html;
 }
+
+document.getElementById("guessInput").addEventListener("keydown", function(event) {
+
+    if (event.key === "Enter") {
+        submitGuess();
+    }
+
+});
