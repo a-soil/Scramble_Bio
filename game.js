@@ -144,14 +144,6 @@ function endGame() {
     let score = 0;
 
     valid.forEach(word => {
-
-        if (word.length === 3)
-            score += 1;
-        else if (word.length === 4)
-            score += 2;
-        else if (word.length === 5)
-            score += 4;
-        else
             score += word.length;
     });
 
