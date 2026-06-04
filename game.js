@@ -26,20 +26,32 @@ Promise.all([
 
 function startGame() {
 
-    console.log("startGame running");
-
     document.getElementById("startScreen")
         .style.display = "none";
 
     document.getElementById("gameScreen")
         .style.display = "block";
 
-    document.getElementById("letters");
+    let words = Object.keys(bioDict);
 
-    document.getElementById("timer")
-        .innerText = "60";
+    targetWord =
+        words[Math.floor(Math.random() * words.length)];
+
+    let letters =
+        targetWord.replaceAll(" ", "").split("");
+
+    letters.sort(() => Math.random() - 0.5);
+
+    document.getElementById("letters")
+        .innerText = letters.join(" ");
+
+    targetCount =
+        countLetters(
+            targetWord.toLowerCase().replaceAll(" ", "")
+        );
+
+    startTimer();
 }
-
 
 
 function countLetters(word) {
