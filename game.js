@@ -7,22 +7,6 @@ let guesses = [];
 
 let timeLeft = 60;
 
-function startGame() {
-
-    console.log("startGame running");
-
-    document.getElementById("startScreen")
-        .style.display = "none";
-
-    document.getElementById("gameScreen")
-        .style.display = "block";
-
-    document.getElementById("letters");
-
-    document.getElementById("timer")
-        .innerText = "60";
-}
-
 
 Promise.all([
     fetch("biology_dictionary.json").then(r => r.json()),
@@ -42,26 +26,21 @@ Promise.all([
 
 function startGame() {
 
-    let words = Object.keys(bioDict);
+    console.log("startGame running");
 
-    targetWord =
-        words[Math.floor(Math.random() * words.length)];
+    document.getElementById("startScreen")
+        .style.display = "none";
 
-    let letters =
-        targetWord.replaceAll(" ", "").split("");
+    document.getElementById("gameScreen")
+        .style.display = "block";
 
-    letters.sort(() => Math.random() - 0.5);
+    document.getElementById("letters");
 
-    document.getElementById("letters")
-        .innerText = letters.join(" ");
-
-    targetCount =
-           countLetters(
-        targetWord.toLowerCase().replaceAll(" ", "")
-    );
-
-    startTimer();
+    document.getElementById("timer")
+        .innerText = "60";
 }
+
+
 
 function countLetters(word) {
 
