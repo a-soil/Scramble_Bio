@@ -9,11 +9,19 @@ let timeLeft = 60;
 
 function startGame() {
 
+    console.log("START");
+
     document.getElementById("startScreen")
         .style.display = "none";
 
     document.getElementById("gameScreen")
         .style.display = "block";
+
+    document.getElementById("letters")
+        .innerText = "HELLO TEST";
+
+    document.getElementById("timer")
+        .innerText = "60";
 }
 
 
