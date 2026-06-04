@@ -7,6 +7,15 @@ let guesses = [];
 
 let timeLeft = 60;
 
+function startGame() {
+
+    document.getElementById("startScreen")
+        .style.display = "none";
+
+    document.getElementById("gameScreen")
+        .style.display = "block";
+
+
 Promise.all([
     fetch("biology_dictionary.json").then(r => r.json()),
     fetch("english_words.txt").then(r => r.text())
@@ -21,9 +30,6 @@ Promise.all([
         .map(x => x.trim().toLowerCase())
         .filter(x => x.length > 0)
     );
-
-
-    startGame();
 });
 
 function startGame() {
