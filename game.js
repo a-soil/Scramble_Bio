@@ -9,7 +9,7 @@ let timeLeft = 60;
 
 function startGame() {
 
-    console.log("START");
+    console.log("startGame running");
 
     document.getElementById("startScreen")
         .style.display = "none";
@@ -17,8 +17,7 @@ function startGame() {
     document.getElementById("gameScreen")
         .style.display = "block";
 
-    document.getElementById("letters")
-        .innerText = "HELLO TEST";
+    document.getElementById("letters");
 
     document.getElementById("timer")
         .innerText = "60";
