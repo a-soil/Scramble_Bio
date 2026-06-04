@@ -13,7 +13,7 @@ function startGame() {
         .style.display = "none";
 
     document.getElementById("gameScreen")
-        .style.display = "block";
+        .style.display = "block";}
 
 
 Promise.all([
